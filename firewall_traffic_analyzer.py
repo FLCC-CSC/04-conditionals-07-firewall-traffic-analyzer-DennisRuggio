@@ -26,11 +26,14 @@ def main():
     print(f'Port: {port_number}, Transfer Size: {data_transfer} MB')
 
 
-    if port_number == 22 and data_transfer >500:
+    if port_number == 22 or data_transfer >500:
         print('Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!')
 
     elif port_number == 80 and data_transfer >100:
         print('Risk Assessment: MEDIUM RISK: Large unencrypted data transfer detected.')
+
+    elif port_number == 3389:
+        print('Risk Assessment: HIGH RISK: Potential unauthorized remote access detected!')
 
     elif port_number == 443:
         print('Risk Assessment: LOW RISK: Secure encrypted transfer detected.')
